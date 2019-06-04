@@ -1,0 +1,37 @@
+# hello-kubernetes.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-kubernetes
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 8080
+  - name: jmx
+    port: 1099
+  selector:
+    app: helloworld
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: helloworld
+        imagePullPolicy: Always
+        image: chocpanda/helloworld:latest-debug
+        ports:
+        - containerPort: 8080
+        - containerPort: 1099

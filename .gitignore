@@ -20,6 +20,7 @@
 
 # project release file
 /*.war
+/*.jar
 
 # plugin release files
 /*.zip
@@ -31,3 +32,14 @@
 
 # "temporary" build files
 /target
+/build
+/bin
+
+# builder
+.gradle
+!gradle-wrapper.jar
+gradle-app.setting
+
+# ide
+.idea
+.vscode
