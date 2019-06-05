@@ -1,6 +1,9 @@
 # hello-kubernetes
 Very simple Hello world application for testing dev tools on a simplified kubernetes config
 
+# MOVED TO GITLAB
+https://gitlab.com/ChocPanda/hello-kubernetes
+
 ## USAGE
 
 ```bash
